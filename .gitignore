@@ -29,6 +29,7 @@ typings/
 # debug
 .firebase
 *debug.log*
+*.tsbuildinfo
 
 # local env files
 .env.local

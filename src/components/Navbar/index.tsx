@@ -19,8 +19,8 @@ function Navbar() {
             <div className='flex justify-start lg:w-0 lg:flex-1'>
               <Link href='/'>
                 <a>
-                  <span className='sr-only'>Workflow</span>
-                  <img className='h-8 w-auto sm:h-10' src='https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg' alt='' />
+                  <span className='sr-only'>avalonx.tech</span>
+                  <img className='h-8 w-auto sm:h-10' src='/images/avalonx.tech.png' alt='avalonx.tech' />
                 </a>
               </Link>
             </div>
@@ -140,7 +140,7 @@ function Navbar() {
               <div className='pt-5 pb-6 px-5'>
                 <div className='flex items-center justify-between'>
                   <div>
-                    <img className='h-8 w-auto' src='https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg' alt='Workflow' />
+                    <img className='h-8 w-auto' src='/images/avalonx.tech.png' alt='avalonx.tech' />
                   </div>
                   <div className='-mr-2'>
                     <Popover.Button className='bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500'>
@@ -163,13 +163,6 @@ function Navbar() {
               </div>
               <div className='py-6 px-5 space-y-6'>
                 <div className='grid grid-cols-2 gap-y-4 gap-x-8'>
-                  <Link href='/pricing'>
-                    <a className='text-base font-medium text-gray-900 hover:text-gray-700'>Pricing</a>
-                  </Link>
-
-                  <Link href='/docs'>
-                    <a className='text-base font-medium text-gray-900 hover:text-gray-700'>Docs</a>
-                  </Link>
                   {emailTools.map((item) => (
                     <Link href={item.href} key={item.name}>
                       <a className='text-base font-medium text-gray-900 hover:text-gray-700'>{item.name}</a>

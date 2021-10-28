@@ -9,7 +9,6 @@ function withAuth(apiFunction: IAPIFunction) {
       await admin.auth().verifyIdToken(idToken);
       return apiFunction(req, res);
     } catch (err) {
-      console.log(err.message);
       const msg = 'Invalid request / Authentication failed.';
       res.status(400).json({ error: msg, message: msg });
     }
