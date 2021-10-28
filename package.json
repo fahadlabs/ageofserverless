@@ -8,10 +8,6 @@
     "url": "https://github.com/avalonx-io/avalonx.tech"
   },
   "issues": "https://github.com/avalonx-io/avalonx.tech/issues",
-  "engines": {
-    "node": "16",
-    "npm": "8"
-  },
   "scripts": {
     "dev": "next dev",
     "start": "next start",
