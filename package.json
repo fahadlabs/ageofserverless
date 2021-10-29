@@ -17,7 +17,8 @@
     "lint:fix": "npm run lint -- --fix",
     "pretty": "prettier --check '**/*.{ts,tsx}'",
     "pretty:fix": "prettier --write '**/*.{ts,tsx}'",
-    "build": "next build && next-sitemap"
+    "build": "next build && next-sitemap",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@headlessui/react": "^1.4.1",
@@ -55,6 +56,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.26.1",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^7.0.4",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.3.1",
     "next-sitemap": "^1.6.192",
