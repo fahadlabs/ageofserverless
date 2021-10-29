@@ -18,4 +18,4 @@ You are welcome to contribute on this project. Please read [the guide](/CONTRIBU
 
 Copyright (c) AvalonX. All rights reserved.
 
-Licensed under the [MIT](LICENSE.txt) license.
+Licensed under the [MIT](LICENSE) license.
