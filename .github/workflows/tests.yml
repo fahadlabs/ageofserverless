@@ -1,6 +1,10 @@
 name: tsc & lint test
 
-'on': [push, pull_request]
+'on':
+  push:
+  pull_request:
+    branches:
+      - main
 
 jobs:
   lint_build:
