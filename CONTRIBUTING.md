@@ -21,16 +21,16 @@ Follow the steps to make a PR.
 
 ### Install
 ```
-npm ci
+yarn install
 ```
 ### Start development server
 ```
-npm run dev
+yarn dev
 ```
 ### Code style
 ```
-npm run lint
-npm run pretty
+yarn lint
+yarn pretty
 ```
 
 ## Naming conventions
