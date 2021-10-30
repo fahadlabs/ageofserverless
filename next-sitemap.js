@@ -1,7 +1,9 @@
-// https://github.com/iamvishnusankar/next-sitemap/blob/master/README.md
+/**
+ * @type {import('next-sitemap').IConfig}
+ */
 
 module.exports = {
-  siteUrl: 'https://ftoolkit.com',
+  siteUrl: 'https://avalonx.tech',
   changefreq: 'daily',
   priority: 0.7,
   sitemapSize: 5000,

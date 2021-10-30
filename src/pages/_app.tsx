@@ -1,14 +1,14 @@
-import { useAnalytics, usePageView } from '../src/firebase/analytics';
-import { usePerformance } from '../src/firebase/performance';
+import { useAnalytics, usePageView } from '../firebase/analytics';
+import { usePerformance } from '../firebase/performance';
 import { ToastProvider } from 'react-toast-notifications';
-import { useSignin } from '../src/firebase/auth';
+import { useSignin } from '../firebase/auth';
 import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
 import 'tailwindcss/tailwind.css';
 import { useEffect } from 'react';
 import nProgress from 'nprogress';
 import 'nprogress/nprogress.css';
-import 'styles/global.scss';
+import '../styles/global.scss';
 
 function App({ Component, pageProps }: AppProps) {
   const { events, ...router } = useRouter();

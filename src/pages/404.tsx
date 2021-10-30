@@ -1,5 +1,5 @@
-import { Container } from '../src/components/elements';
-import { Layout, Metadata } from '../src/components';
+import { Container } from '../components/elements';
+import { Layout, Metadata } from '../components';
 import Link from 'next/link';
 import React from 'react';
 

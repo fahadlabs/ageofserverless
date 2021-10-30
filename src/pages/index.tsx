@@ -1,5 +1,5 @@
-import { Container } from '../src/components/elements';
-import { Metadata, Layout } from '../src/components';
+import { Container } from '../components/elements';
+import { Metadata, Layout } from '../components';
 
 function Home() {
   return (
