@@ -1,4 +1,4 @@
-import { firebaseConfig } from '../../config/firebase';
+import { firebaseConfig } from '../../config/firebase.config';
 import admin from 'firebase-admin';
 
 if (!admin.apps.length) {
