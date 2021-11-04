@@ -1,0 +1,39 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "ecmaVersion": 2020,
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "extends": ["plugin:prettier/recommended", "plugin:@next/next/recommended"],
+  "rules": {
+    "react/no-danger": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "no-console": "error",
+    "prettier/prettier": "off",
+    "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
+    "no-plusplus": "off",
+    "react/no-unescaped-entities": 0,
+    "react/jsx-props-no-spreading": "off",
+    "import/prefer-default-export": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "react/no-array-index-key": "off",
+    "react/require-default-props": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "react/button-has-type": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "env": {
+    "node": true,
+    "browser": true,
+    "amd": true
+  }
+}
