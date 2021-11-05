@@ -6,6 +6,7 @@ function bridge(url: string) {
     const token = await auth.currentUser.getIdToken();
     return {
       Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
     };
   }
   const request = {
@@ -21,7 +22,7 @@ function bridge(url: string) {
       const response = await fetch(url, {
         method,
         headers,
-        body,
+        body: JSON.stringify(body),
       });
       return await response.json();
     },
