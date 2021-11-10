@@ -7,7 +7,7 @@ import tools from '../config/tools';
 import Link from 'next/link';
 
 const title = 'DNS, Email, Web - Troubleshoot Security and Performance';
-const description = 'A free online tool to test your site for DNS, Security, Performance, Network, and SEO issues.';
+const description = 'A free online and open source tool to test your site for DNS, Security, Performance, Network, and SEO issues.';
 
 function Home() {
   const inputRef = useRef<HTMLInputElement>();
