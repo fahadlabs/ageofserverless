@@ -1,6 +1,6 @@
 import { useAnalytics, usePageView } from '../firebase/analytics';
-import { usePerformance } from '../firebase/performance';
 import { ToastProvider } from 'react-toast-notifications';
+import { usePerformance } from '../firebase/performance';
 import { useSignin } from '../firebase/auth';
 import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';

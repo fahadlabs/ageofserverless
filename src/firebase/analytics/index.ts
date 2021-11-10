@@ -17,12 +17,8 @@ export const useAnalytics = () => {
 
 export const usePageView = (location: string, path: string) => {
   useEffect(() => {
-    let title = 'ftoolkit';
-    if (typeof document === 'object') {
-      title = document.title;
-    }
     if (typeof window !== 'undefined') return;
-    logEvent(analytics, 'page_view', { page_location: location, page_path: path, page_title: title });
+    logEvent(analytics, 'page_view', { page_location: location, page_path: path, page_title: document.title });
   }, []);
 };
 
