@@ -11,7 +11,7 @@ function Layout({ children, centered = false }: IProps) {
   return (
     <>
       <Navbar />
-      <main className={`relative bg-white ${centered ? 'flex justify-center items-center' : ''}`} style={{ minHeight: `calc(100vh - ${NAV_HEIGHT}px)`, zIndex: 1 }}>
+      <main className={`relative bg-white overflow-x-hidden ${centered ? 'flex justify-center items-center' : ''}`} style={{ minHeight: `calc(100vh - ${NAV_HEIGHT}px)`, zIndex: 1 }}>
         {children}
       </main>
 

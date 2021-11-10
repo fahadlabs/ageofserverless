@@ -1,11 +1,13 @@
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import { ChevronDownIcon } from '@heroicons/react/solid';
 import { Popover, Transition } from '@headlessui/react';
-import { dnsTools, emailTools } from './navigations';
+import { ToolTag } from '../../interfaces/tools';
 import { Container } from '../elements';
+import tools from '../../config/tools';
 import { Fragment } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
+
+const headers: ToolTag[] = ['dns', 'email', 'performance', 'security'];
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
@@ -21,7 +23,7 @@ function Navbar() {
               <Link href='/'>
                 <a>
                   <span className='sr-only'>avalonx.tech</span>
-                  <Image className='h-8 w-auto sm:h-10' src='/images/avalonx.tech.png' alt='avalonx.tech' />
+                  <img className='h-8 w-auto sm:h-10' src='/images/avalonx.tech.png' alt='avalonx.tech' />
                 </a>
               </Link>
             </div>
@@ -32,7 +34,7 @@ function Navbar() {
               </Popover.Button>
             </div>
             <Popover.Group as='nav' className='hidden md:flex space-x-10'>
-              <Popover className='relative'>
+              {/* <Popover className='relative'>
                 {({ open }) => (
                   <>
                     <Popover.Button
@@ -54,16 +56,18 @@ function Navbar() {
                       <Popover.Panel className='absolute z-10 -ml-4 mt-3 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2'>
                         <div className='bg-white rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
                           <div className='relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8'>
-                            {dnsTools.map((item) => (
-                              <Link href={item.href} key={item.name}>
-                                <a className='-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50'>
-                                  <div className='ml-4'>
-                                    <p className='text-base font-medium text-gray-900'>{item.name}</p>
-                                    <p className='mt-1 text-sm text-gray-500'>{item.description}</p>
-                                  </div>
-                                </a>
-                              </Link>
-                            ))}
+                            {tools
+                              .filter((item) => item.tags.includes('dns'))
+                              .map((item) => (
+                                <Link href={item.path} key={item.path}>
+                                  <a className='-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50'>
+                                    <div className='ml-4'>
+                                      <p className='text-base font-medium text-gray-900'>{item.label}</p>
+                                      <p className='mt-1 text-sm text-gray-500'>{item.brief}</p>
+                                    </div>
+                                  </a>
+                                </Link>
+                              ))}
                           </div>
                         </div>
                       </Popover.Panel>
@@ -78,7 +82,7 @@ function Navbar() {
                     <Popover.Button
                       className={classNames(open ? 'text-gray-200' : 'text-gray-300', 'group rounded-md inline-flex items-center text-base font-medium hover:text-gray-200 focus:outline-none')}
                     >
-                      <span>Emails</span>
+                      <span>Email</span>
                       <ChevronDownIcon className={classNames(open ? 'text-gray-200' : 'text-gray-300', 'ml-2 h-5 w-5 group-hover:text-gray-200')} aria-hidden='true' />
                     </Popover.Button>
 
@@ -94,16 +98,18 @@ function Navbar() {
                       <Popover.Panel className='absolute z-10 left-1/2 transform -translate-x-1/2 mt-3 px-2 w-screen max-w-md sm:px-0'>
                         <div className='bg-white rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
                           <div className='relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8'>
-                            {emailTools.map((item) => (
-                              <Link href={item.href} key={item.name}>
-                                <a className='-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50'>
-                                  <div className='ml-4'>
-                                    <p className='text-base font-medium text-gray-900'>{item.name}</p>
-                                    <p className='mt-1 text-sm text-gray-500'>{item.description}</p>
-                                  </div>
-                                </a>
-                              </Link>
-                            ))}
+                            {tools
+                              .filter((item) => item.tags.includes('email'))
+                              .map((item) => (
+                                <Link href={item.path} key={item.path}>
+                                  <a className='-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50'>
+                                    <div className='ml-4'>
+                                      <p className='text-base font-medium text-gray-900'>{item.label}</p>
+                                      <p className='mt-1 text-sm text-gray-500'>{item.brief}</p>
+                                    </div>
+                                  </a>
+                                </Link>
+                              ))}
                           </div>
                         </div>
                       </Popover.Panel>
@@ -111,15 +117,143 @@ function Navbar() {
                   </>
                 )}
               </Popover>
+
+              <Popover className='relative'>
+                {({ open }) => (
+                  <>
+                    <Popover.Button
+                      className={classNames(open ? 'text-gray-200' : 'text-gray-300', 'group rounded-md inline-flex items-center text-base font-medium hover:text-gray-200 focus:outline-none')}
+                    >
+                      <span>Performance</span>
+                      <ChevronDownIcon className={classNames(open ? 'text-gray-200' : 'text-gray-300', 'ml-2 h-5 w-5 group-hover:text-gray-200')} aria-hidden='true' />
+                    </Popover.Button>
+
+                    <Transition
+                      as={Fragment}
+                      enter='transition ease-out duration-200'
+                      enterFrom='opacity-0 translate-y-1'
+                      enterTo='opacity-100 translate-y-0'
+                      leave='transition ease-in duration-150'
+                      leaveFrom='opacity-100 translate-y-0'
+                      leaveTo='opacity-0 translate-y-1'
+                    >
+                      <Popover.Panel className='absolute z-10 left-1/2 transform -translate-x-1/2 mt-3 px-2 w-screen max-w-md sm:px-0'>
+                        <div className='bg-white rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
+                          <div className='relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8'>
+                            {tools
+                              .filter((item) => item.tags.includes('performance'))
+                              .map((item) => (
+                                <Link href={item.path} key={item.path}>
+                                  <a className='-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50'>
+                                    <div className='ml-4'>
+                                      <p className='text-base font-medium text-gray-900'>{item.label}</p>
+                                      <p className='mt-1 text-sm text-gray-500'>{item.brief}</p>
+                                    </div>
+                                  </a>
+                                </Link>
+                              ))}
+                          </div>
+                        </div>
+                      </Popover.Panel>
+                    </Transition>
+                  </>
+                )}
+              </Popover>
+
+              <Popover className='relative'>
+                {({ open }) => (
+                  <>
+                    <Popover.Button
+                      className={classNames(open ? 'text-gray-200' : 'text-gray-300', 'group rounded-md inline-flex items-center text-base font-medium hover:text-gray-200 focus:outline-none')}
+                    >
+                      <span>Security</span>
+                      <ChevronDownIcon className={classNames(open ? 'text-gray-200' : 'text-gray-300', 'ml-2 h-5 w-5 group-hover:text-gray-200')} aria-hidden='true' />
+                    </Popover.Button>
+
+                    <Transition
+                      as={Fragment}
+                      enter='transition ease-out duration-200'
+                      enterFrom='opacity-0 translate-y-1'
+                      enterTo='opacity-100 translate-y-0'
+                      leave='transition ease-in duration-150'
+                      leaveFrom='opacity-100 translate-y-0'
+                      leaveTo='opacity-0 translate-y-1'
+                    >
+                      <Popover.Panel className='absolute z-10 left-1/2 transform -translate-x-1/2 mt-3 px-2 w-screen max-w-md sm:px-0'>
+                        <div className='bg-white rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
+                          <div className='relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8'>
+                            {tools
+                              .filter((item) => item.tags.includes('security'))
+                              .map((item) => (
+                                <Link href={`/${item.path}`} key={item.path}>
+                                  <a className='-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50'>
+                                    <div className='ml-4'>
+                                      <p className='text-base font-medium text-gray-900'>{item.label}</p>
+                                      <p className='mt-1 text-sm text-gray-500'>{item.brief}</p>
+                                    </div>
+                                  </a>
+                                </Link>
+                              ))}
+                          </div>
+                        </div>
+                      </Popover.Panel>
+                    </Transition>
+                  </>
+                )}
+              </Popover> */}
+
+              {headers.map((nav) => (
+                <Popover className='relative' key={nav}>
+                  {({ open }) => (
+                    <>
+                      <Popover.Button
+                        className={classNames(open ? 'text-gray-200' : 'text-gray-300', 'group rounded-md inline-flex items-center text-base font-medium hover:text-gray-200 focus:outline-none')}
+                      >
+                        <span className='uppercase'>{nav}</span>
+                        <ChevronDownIcon className={classNames(open ? 'text-gray-200' : 'text-gray-300', 'ml-2 h-5 w-5 group-hover:text-gray-200')} aria-hidden='true' />
+                      </Popover.Button>
+
+                      <Transition
+                        as={Fragment}
+                        enter='transition ease-out duration-200'
+                        enterFrom='opacity-0 translate-y-1'
+                        enterTo='opacity-100 translate-y-0'
+                        leave='transition ease-in duration-150'
+                        leaveFrom='opacity-100 translate-y-0'
+                        leaveTo='opacity-0 translate-y-1'
+                      >
+                        <Popover.Panel className='absolute z-10 left-1/2 transform -translate-x-1/2 mt-3 px-2 w-screen max-w-md sm:px-0'>
+                          <div className='bg-white rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
+                            <div className='relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8'>
+                              {tools
+                                .filter((item) => item.tags.includes(nav))
+                                .map((item) => (
+                                  <Link href={`/${item.path}`} key={item.path}>
+                                    <a className='-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50'>
+                                      <div className='ml-4'>
+                                        <p className='text-base font-medium text-gray-900'>{item.label}</p>
+                                        <p className='mt-1 text-sm text-gray-500'>{item.brief}</p>
+                                      </div>
+                                    </a>
+                                  </Link>
+                                ))}
+                            </div>
+                          </div>
+                        </Popover.Panel>
+                      </Transition>
+                    </>
+                  )}
+                </Popover>
+              ))}
             </Popover.Group>
             <div className='hidden md:flex items-center justify-end md:flex-1 lg:w-0'>
-              <a target='_blank' href='https://github.com/avalonx-io/avalonx.tech' className='whitespace-nowrap text-base font-medium text-gray-400 hover:text-gray-500 transition-all'>
+              <a target='_blank' href='https://github.com/avalonx-io/avalonx.tech' className='whitespace-nowrap text-base font-medium text-gray-400 hover:text-gray-200 transition-all'>
                 Contribute
               </a>
               <a
                 target='_blank'
                 href='https://github.com/avalonx-io/avalonx.tech'
-                className='ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-gray-400 bg-indigo-800 hover:text-gray-300 hover:bg-indigo-900 transition-all'
+                className='ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-gray-300 bg-indigo-600 hover:text-gray-100 hover:bg-indigo-800 transition-all'
               >
                 Sponsor
               </a>
@@ -141,7 +275,7 @@ function Navbar() {
               <div className='pt-5 pb-6 px-5'>
                 <div className='flex items-center justify-between'>
                   <div>
-                    <Image className='h-8 w-auto' src='/images/avalonx.tech.png' alt='avalonx.tech' />
+                    <img className='h-8 w-auto' src='/images/avalonx.tech.png' alt='avalonx.tech' />
                   </div>
                   <div className='-mr-2'>
                     <Popover.Button className='bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500'>
@@ -152,23 +286,27 @@ function Navbar() {
                 </div>
                 <div className='mt-6'>
                   <nav className='grid gap-y-8'>
-                    {dnsTools.map((item) => (
-                      <Link key={item.name} href={item.href}>
-                        <a className='-m-3 p-3 flex items-center rounded-md hover:bg-gray-50'>
-                          <span className='ml-3 text-base font-medium text-gray-900'>{item.name}</span>
-                        </a>
-                      </Link>
-                    ))}
+                    {tools
+                      .filter((item) => item.tags.includes('dns'))
+                      .map((item) => (
+                        <Link key={item.path} href={`/${item.path}`}>
+                          <a className='-m-3 p-3 flex items-center rounded-md hover:bg-gray-50'>
+                            <span className='ml-3 text-base font-medium text-gray-900'>{item.label}</span>
+                          </a>
+                        </Link>
+                      ))}
                   </nav>
                 </div>
               </div>
               <div className='py-6 px-5 space-y-6'>
                 <div className='grid grid-cols-2 gap-y-4 gap-x-8'>
-                  {emailTools.map((item) => (
-                    <Link href={item.href} key={item.name}>
-                      <a className='text-base font-medium text-gray-900 hover:text-gray-700'>{item.name}</a>
-                    </Link>
-                  ))}
+                  {tools
+                    .filter((item) => item.tags.includes('email'))
+                    .map((item) => (
+                      <Link href={`/${item.path}`} key={item.path}>
+                        <a className='text-base font-medium text-gray-900 hover:text-gray-700'>{item.label}</a>
+                      </Link>
+                    ))}
                 </div>
                 <div className='flex gap-x-2'>
                   <a

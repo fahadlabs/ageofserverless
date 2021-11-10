@@ -15,7 +15,7 @@
     "react/prop-types": "off",
     "no-console": "error",
     "prettier/prettier": "off",
-    "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
+    "no-unused-vars": ["error", { "vars": "all", "args": "none", "ignoreRestSiblings": false }],
     "no-plusplus": "off",
     "react/no-unescaped-entities": 0,
     "react/jsx-props-no-spreading": "off",
@@ -24,7 +24,8 @@
     "react/no-array-index-key": "off",
     "react/require-default-props": "off",
     "jsx-a11y/anchor-is-valid": "off",
-    "react/button-has-type": "off"
+    "react/button-has-type": "off",
+    "@next/next/no-img-element": "off"
   },
   "settings": {
     "react": {

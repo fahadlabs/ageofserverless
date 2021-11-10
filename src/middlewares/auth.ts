@@ -9,8 +9,8 @@ function withAuth(apiFunction: IAPIFunction) {
       await admin.auth().verifyIdToken(idToken);
       return apiFunction(req, res);
     } catch (err) {
-      const msg = 'Invalid request / Authentication failed.';
-      res.status(400).json({ error: msg, message: msg });
+      res.setHeader('WWW-Authenticate', 'Basic realm="Secure Area"');
+      res.status(401).json({ message: 'Authentication failed.' });
     }
   };
 }
