@@ -1,6 +1,6 @@
 name: Run test suites
 
-'on': [push, pull_request]
+'on': [pull_request]
 
 jobs:
   tests:
@@ -14,6 +14,6 @@ jobs:
       - name: Install the dependencies
         run: yarn install
       - name: Code style test & validation
-        run: yarn style
-      - name: Run test suites
-        run: yarn test
+        run: yarn lint && yarn pretty
+      - name: Run tests and build
+        run: yarn build
