@@ -1,8 +1,6 @@
-import { ChevronRightIcon, GlobeAltIcon, MailIcon, ShieldCheckIcon, TrendingUpIcon, XIcon } from '@heroicons/react/outline';
-import { FormEvent, useEffect, useRef, useState } from 'react';
-import { Metadata, Layout, Select } from '../components';
+import { GlobeAltIcon, MailIcon, ShieldCheckIcon, TrendingUpIcon } from '@heroicons/react/outline';
 import { Container } from '../components/elements';
-import { useRouter } from 'next/router';
+import { Metadata, Layout } from '../components';
 import tools from '../config/tools';
 import Link from 'next/link';
 
@@ -10,27 +8,6 @@ const title = 'DNS, Email, Web - Troubleshoot Security and Performance';
 const description = 'A free online and open source tool to test your site for DNS, Security, Performance, Network, and SEO issues.';
 
 function Home() {
-  const inputRef = useRef<HTMLInputElement>();
-  const { query, ...router } = useRouter();
-  const [search, setSearch] = useState('');
-  const [tool, setTool] = useState('');
-  useEffect(() => {
-    if (query.q) {
-      setSearch(query.q as string);
-    }
-  }, [query]);
-  useEffect(() => {
-    setTool(tools[0].path);
-  }, [tools]);
-  useEffect(() => {
-    if (inputRef.current) {
-      inputRef.current.focus();
-    }
-  }, [tool]);
-  const onSearch = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    router.push(`/${tool}?q=${search}`);
-  };
   return (
     <Layout>
       <Metadata path='/' title={title} description={description} />
@@ -38,27 +15,7 @@ function Home() {
       <section className='py-24 bg-no-repeat bg-bottom bg-auto md:bg-cover' style={{ backgroundImage: 'url(/images/avalonx_bg1.webp)' }}>
         <Container>
           <h1 className='text-2xl sm:text-4xl mb-4 text-gray-200 text-center'>{title}</h1>
-          <p className='text-center text-lg mb-16 text-white'>{description}</p>
-
-          <form className='flex bg-white w-full max-w-lg mx-auto h-12 focus-within:shadow-xl ' onSubmit={onSearch}>
-            <Select data={tools} label='label' value='path' selected={tool} onSelect={setTool} />
-            <input ref={inputRef} type='text' name='search' className='flex-auto px-4 sm:text-sm outline-none' placeholder='Search' value={search} onChange={(e) => setSearch(e.target.value)} />
-            {search && (
-              <button
-                type='button'
-                className='px-2'
-                onClick={() => {
-                  setSearch('');
-                  inputRef.current.focus();
-                }}
-              >
-                <XIcon className='h-5 w-5 text-gray-400' />
-              </button>
-            )}
-            <button type='submit' className='px-2 bg-green-600'>
-              <ChevronRightIcon className='h-6 w-6 text-gray-100' />
-            </button>
-          </form>
+          <p className='text-center text-lg mb-12 text-white'>{description}</p>
         </Container>
       </section>
 
@@ -97,7 +54,7 @@ function Home() {
             <span className='block text-indigo-600'>Get started with your choice.</span>
           </h2>
           <div className='mt-8 flex lg:mt-0 lg:flex-shrink-0'>
-            <div className='inline-flex rounded-md shadow'>
+            {/* <div className='inline-flex rounded-md shadow'>
               <a
                 target='_blank'
                 href='https://github.com/avalonx-io/avalonx.tech'
@@ -105,7 +62,7 @@ function Home() {
               >
                 Sponsor
               </a>
-            </div>
+            </div> */}
             <div className='ml-3 inline-flex rounded-md shadow'>
               <a
                 target='_blank'
