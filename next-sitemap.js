@@ -3,7 +3,7 @@
  */
 
 module.exports = {
-  siteUrl: 'https://avalonx.tech',
+  siteUrl: 'https://ageofserverless.com',
   changefreq: 'daily',
   priority: 0.7,
   sitemapSize: 5000,

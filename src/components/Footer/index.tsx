@@ -30,7 +30,7 @@ function Footer() {
 
         <hr className='border-gray-600 my-6' />
 
-        <p className='text-sm text-gray-500 text-center'>&copy; {new Date().getFullYear()} avalonx.tech. All rights reserved.</p>
+        <p className='text-sm text-gray-500 text-center'>&copy; {new Date().getFullYear()} ageofserverless.com. All rights reserved.</p>
       </Container>
     </footer>
   );

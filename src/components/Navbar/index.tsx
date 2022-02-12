@@ -22,8 +22,8 @@ function Navbar() {
             <div className='flex justify-start lg:w-0 lg:flex-1'>
               <Link href='/'>
                 <a>
-                  <span className='sr-only'>avalonx.tech</span>
-                  <img className='h-8 w-auto sm:h-10' src='/images/avalonx.tech.png' alt='avalonx.tech' />
+                  <span className='sr-only'>ageofserverless.com</span>
+                  <img className='h-8 w-auto sm:h-10' src='/images/avalonx.tech.png' alt='ageofserverless.com' />
                 </a>
               </Link>
             </div>
@@ -275,7 +275,7 @@ function Navbar() {
               <div className='pt-5 pb-6 px-5'>
                 <div className='flex items-center justify-between'>
                   <div>
-                    <img className='h-8 w-auto' src='/images/avalonx.tech.png' alt='avalonx.tech' />
+                    <img className='h-8 w-auto' src='/images/avalonx.tech.png' alt='ageofserverless.com' />
                   </div>
                   <div className='-mr-2'>
                     <Popover.Button className='bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500'>

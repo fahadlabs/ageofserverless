@@ -1,20 +1,20 @@
 {
-  "name": "avalonx.tech",
+  "name": "ageofserverless",
   "version": "1.0.0",
   "license": "MIT",
-  "description": "avalonx.tech",
-  "homepage": "https://avalonx.tech",
+  "description": "ageofserverless",
+  "homepage": "https://ageofserverless.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/avalonx-io/avalonx.tech"
+    "url": "https://github.com/fhdaax/xtoolkit"
   },
-  "issues": "https://github.com/avalonx-io/avalonx.tech/issues",
+  "issues": "https://github.com/fhdaax/xtoolkit/issues",
   "scripts": {
     "dev": "next dev",
     "start": "next start",
     "test": "jest --config jest.config.js",
     "lint": "eslint '**/*.{ts,tsx}'",
-    "lint:fix": "yarn lint -- --fix",
+    "lint:fix": "yarn lint --fix",
     "pretty": "prettier --check '**/*.{ts,tsx}'",
     "pretty:fix": "prettier --write '**/*.{ts,tsx}'",
     "prebuild": "yarn test",
