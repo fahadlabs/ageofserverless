@@ -3,6 +3,7 @@ import { ChevronDownIcon } from '@heroicons/react/solid';
 import { Popover, Transition } from '@headlessui/react';
 import { ToolTag } from '../../interfaces/tools';
 import { Container } from '../elements';
+import { REPOSITORY } from 'src/config';
 import tools from '../../config/tools';
 import { Fragment } from 'react';
 import Link from 'next/link';
@@ -23,7 +24,7 @@ function Navbar() {
               <Link href='/'>
                 <a>
                   <span className='sr-only'>ageofserverless.com</span>
-                  <img className='h-8 w-auto sm:h-10' src='/images/avalonx.tech.png' alt='ageofserverless.com' />
+                  <img className='h-8 w-auto sm:h-10' src='/images/ageofserverless.png' alt='ageofserverless' />
                 </a>
               </Link>
             </div>
@@ -247,16 +248,16 @@ function Navbar() {
               ))}
             </Popover.Group>
             <div className='hidden md:flex items-center justify-end md:flex-1 lg:w-0'>
-              <a target='_blank' href='https://github.com/avalonx-io/avalonx.tech' className='whitespace-nowrap text-base font-medium text-gray-400 hover:text-gray-200 transition-all'>
+              <a target='_blank' href={REPOSITORY} className='whitespace-nowrap text-base font-medium text-gray-400 hover:text-gray-200 transition-all'>
                 Contribute
               </a>
-              <a
+              {/* <a
                 target='_blank'
-                href='https://github.com/avalonx-io/avalonx.tech'
+                href={REPOSITORY}
                 className='ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-gray-300 bg-indigo-600 hover:text-gray-100 hover:bg-indigo-800 transition-all'
               >
                 Sponsor
-              </a>
+              </a> */}
             </div>
           </div>
         </Container>
@@ -275,7 +276,7 @@ function Navbar() {
               <div className='pt-5 pb-6 px-5'>
                 <div className='flex items-center justify-between'>
                   <div>
-                    <img className='h-8 w-auto' src='/images/avalonx.tech.png' alt='ageofserverless.com' />
+                    <img className='h-8 w-auto' src='/images/ageofserverless.png' alt='ageofserverless.com' />
                   </div>
                   <div className='-mr-2'>
                     <Popover.Button className='bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500'>
@@ -311,18 +312,18 @@ function Navbar() {
                 <div className='flex gap-x-2'>
                   <a
                     target='_blank'
-                    href='https://github.com/avalonx-io/avalonx.tech'
+                    href={REPOSITORY}
                     className='w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white text-gray-300 bg-green-800 hover:text-gray-200 hover:bg-green-900 transition-all'
                   >
                     Contribute
                   </a>
-                  <a
+                  {/* <a
                     target='_blank'
-                    href='https://github.com/avalonx-io/avalonx.tech'
+                    href={REPOSITORY}
                     className='w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white text-gray-300 bg-pink-800 hover:text-gray-200 hover:bg-pink-900 transition-all'
                   >
                     Sponsor
-                  </a>
+                  </a> */}
                 </div>
               </div>
             </div>

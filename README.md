@@ -20,6 +20,6 @@ You are welcome to contribute on this project. Please read [the guide](/CONTRIBU
 
 ## License
 
-Copyright (c) AvalonX. All rights reserved.
+Copyright (c) fahadlabs. All rights reserved.
 
 Licensed under the [MIT](LICENSE) license.

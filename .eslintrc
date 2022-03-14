@@ -1,5 +1,10 @@
 {
-  "root": true,
+  "env": {
+    "node": true,
+    "browser": true,
+    "amd": true
+  },
+  "extends": ["plugin:prettier/recommended", "plugin:@next/next/recommended"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "project": "./tsconfig.json",
@@ -8,7 +13,6 @@
       "jsx": true
     }
   },
-  "extends": ["plugin:prettier/recommended", "plugin:@next/next/recommended"],
   "rules": {
     "react/no-danger": "off",
     "react/react-in-jsx-scope": "off",
@@ -27,14 +31,10 @@
     "react/button-has-type": "off",
     "@next/next/no-img-element": "off"
   },
+  "root": true,
   "settings": {
     "react": {
       "version": "detect"
     }
-  },
-  "env": {
-    "node": true,
-    "browser": true,
-    "amd": true
   }
 }

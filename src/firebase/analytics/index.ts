@@ -17,9 +17,9 @@ export const useAnalytics = () => {
 
 export const usePageView = (location: string, path: string) => {
   useEffect(() => {
-    if (typeof window !== 'undefined') return;
+    if (!analytics || typeof document === 'undefined') return;
     logEvent(analytics, 'page_view', { page_location: location, page_path: path, page_title: document.title });
-  }, []);
+  }, [location, path]);
 };
 
 export const logNewContact = () => {
