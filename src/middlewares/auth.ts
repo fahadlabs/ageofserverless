@@ -1,13 +1,13 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { IAPIFunction } from '../interfaces/backend';
+import { parseCookies } from 'nookies';
 import admin from '../firebase/admin';
 
-function withAuth(apiFunction: IAPIFunction) {
+export function withServerAuth(handler: (req: NextApiRequest, res: NextApiResponse) => void) {
   return async (req: NextApiRequest, res: NextApiResponse) => {
     try {
-      const idToken = req.headers.authorization.split(' ')[1];
-      await admin.auth().verifyIdToken(idToken);
-      return apiFunction(req, res);
+      const { token } = parseCookies({ req });
+      await admin.auth().verifyIdToken(token);
+      return handler(req, res);
     } catch (err) {
       res.setHeader('WWW-Authenticate', 'Basic realm="Secure Area"');
       res.status(401).json({ message: 'Authentication failed.' });
@@ -15,4 +15,4 @@ function withAuth(apiFunction: IAPIFunction) {
   };
 }
 
-export default withAuth;
+export default withServerAuth;

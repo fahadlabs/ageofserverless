@@ -4,6 +4,8 @@ export const SITE_NAME = 'ageofserverless.com';
 
 export const WEB_ADDRESS = `https://${SITE_NAME}`;
 
+export const REPOSITORY = 'https://github.com/fahadlabs/ageofserverless';
+
 // default description
 export const DESCRIPTION = 'A free online and open source tool to test your site for DNS, Security, Performance, Network, and SEO issues.';
 

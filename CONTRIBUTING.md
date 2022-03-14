@@ -39,7 +39,6 @@ yarn pretty
 
 Branch names consist of a type and the describing branch name itself, which is always **lowercase** separated by **dashes**.
 It follows this structure `<type>/<issue-id>/<name>`.
-For more detailed information check out the source [Branch Types by CKSource](https://docs.ckeditor.com/ckeditor5/latest/framework/guides/contributing/git-commit-message-convention.html)
 
 | Types       | Changelog | Description                                        |
 | ----------- | --------- | -------------------------------------------------- |

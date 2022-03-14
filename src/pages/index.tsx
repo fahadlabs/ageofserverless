@@ -3,6 +3,7 @@ import { FormEvent, useEffect, useRef, useState } from 'react';
 import { Metadata, Layout, Select } from '../components';
 import { Container } from '../components/elements';
 import { useRouter } from 'next/router';
+import { REPOSITORY } from 'src/config';
 import tools from '../config/tools';
 import Link from 'next/link';
 
@@ -35,7 +36,7 @@ function Home() {
     <Layout>
       <Metadata path='/' title={title} description={description} />
 
-      <section className='py-24 bg-no-repeat bg-bottom bg-auto md:bg-cover' style={{ backgroundImage: 'url(/images/avalonx_bg1.webp)' }}>
+      <section className='py-24 bg-no-repeat bg-bottom bg-auto md:bg-cover' style={{ backgroundImage: 'url(/images/ageofserverless_bg1.webp)' }}>
         <Container>
           <h1 className='text-2xl sm:text-4xl mb-4 text-gray-200 text-center'>{title}</h1>
           <p className='text-center text-lg mb-16 text-white'>{description}</p>
@@ -97,19 +98,19 @@ function Home() {
             <span className='block text-indigo-600'>Get started with your choice.</span>
           </h2>
           <div className='mt-8 flex lg:mt-0 lg:flex-shrink-0'>
-            <div className='inline-flex rounded-md shadow'>
+            {/* <div className='inline-flex rounded-md shadow'>
               <a
                 target='_blank'
-                href='https://github.com/avalonx-io/avalonx.tech'
+                href={REPOSITORY}
                 className='inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700'
               >
                 Sponsor
               </a>
-            </div>
+            </div> */}
             <div className='ml-3 inline-flex rounded-md shadow'>
               <a
                 target='_blank'
-                href='https://github.com/avalonx-io/avalonx.tech'
+                href={REPOSITORY}
                 className='inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50'
               >
                 Contribute
