@@ -21,9 +21,6 @@ import { HTMLAttributes } from 'react';
 //   return <button disabled={disabled} {...props}></button>;
 // }
 
-interface IContainer extends HTMLAttributes<HTMLDivElement> {
-  className?: string;
-}
-export function Container({ className = '', ...props }: IContainer) {
-  return <div className={`max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 ${className}`}>{props.children}</div>;
+export function Container({ className = '', children }: HTMLAttributes<HTMLDivElement>) {
+  return <div className={`max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 ${className}`}>{children}</div>;
 }
