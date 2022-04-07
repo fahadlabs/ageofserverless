@@ -5,8 +5,8 @@ const tools: ITool[] = [
   ## DNS
   */
   {
-    path: 'a-record',
-    label: 'A Record',
+    path: 'dns-a',
+    label: 'DNS A Record',
     tags: ['home', 'dns'],
     rate: 3,
     brief: 'Hey there',

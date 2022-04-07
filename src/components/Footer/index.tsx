@@ -1,6 +1,7 @@
 import { ToolTag } from '../../interfaces/tools';
 import { Container } from '../elements';
 import tools from '../../config/tools';
+import { SITE_NAME } from 'src/config';
 import Link from 'next/link';
 
 const headers: ToolTag[] = ['dns', 'email', 'performance', 'security'];
@@ -17,7 +18,7 @@ function Footer() {
                 .filter((i) => i.tags.includes(nav))
                 .map((item) => (
                   <li key={item.path} className='block mt-2'>
-                    <Link href={item.path}>
+                    <Link href={`/${item.path}`}>
                       <a style={{ borderBottomWidth: 1 }} className='border-gray-600 hover:border-gray-500 transition-all text-gray-300 hover:text-white capitalize text-sm py-1'>
                         {item.label}
                       </a>
@@ -30,7 +31,9 @@ function Footer() {
 
         <hr className='border-gray-600 my-6' />
 
-        <p className='text-sm text-gray-500 text-center'>&copy; {new Date().getFullYear()} ageofserverless.com. All rights reserved.</p>
+        <p className='text-sm text-gray-500 text-center'>
+          &copy; {new Date().getFullYear()} {SITE_NAME}. All rights reserved.
+        </p>
       </Container>
     </footer>
   );
