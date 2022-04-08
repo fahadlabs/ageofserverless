@@ -26,8 +26,8 @@
     "build": "next build",
     "postbuild": "next-sitemap",
     "prepare": "husky install",
-    "docker:build": "sudo docker build -t fahadlabs/ageofserverless:latest .",
-    "docker:run": "sudo docker run -e 3000:3000 fahadlabs/ageofserverless:latest"
+    "docker:build": "docker build -t fahadlabs/ageofserverless:latest .",
+    "docker:run": "docker run -e 8080:8080 fahadlabs/ageofserverless:latest"
   },
   "dependencies": {
     "@headlessui/react": "^1.5.0",

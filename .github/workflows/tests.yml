@@ -1,13 +1,10 @@
-name: Code format test
+name: Code format & build test
 
 on: [pull_request]
 
 jobs:
-  tests:
+  code-build-test:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [16.x]
 
     env:
       FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
@@ -22,11 +19,12 @@ jobs:
       FIREBASE_SDK_CLIENT_EMAIL: ${{ secrets.FIREBASE_SDK_CLIENT_EMAIL }}
 
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - name: Setup Node 16.x
+        uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 16.x
+          cache: yarn
       - run: yarn install -s
       - run: yarn format && yarn lint
       - run: yarn build
