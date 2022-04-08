@@ -23,3 +23,7 @@ You are welcome to contribute on this project. Please read [the guide](/CONTRIBU
 Copyright (c) fahadlabs. All rights reserved.
 
 Licensed under the [MIT](LICENSE) license.
+
+## Code of Conduct
+
+:wave: Be nice. See [our code of conduct](CODE_OF_CONDUCT.md)
