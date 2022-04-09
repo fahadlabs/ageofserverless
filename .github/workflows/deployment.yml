@@ -38,4 +38,4 @@ jobs:
         run: docker push $IMAGE_NAME
 
       - name: Deploy Docker image
-        run: gcloud run deploy ${{ secrets.GCP_APP_NAME }} --image $IMAGE_NAME --region us-central1 --platform managed --allow-unauthenticated --cpu 1 --min-instances 1 --max-instances 5 --memory 256Mi --use-http2 --set-secrets [FIREBASE_SDK_PRIVATE_KEY=ageofserverless-firebase-sdk-private-key:latest,FIREBASE_SDK_CLIENT_EMAIL=ageofserverless-firebase-sdk-client-email:latest]
+        run: gcloud run deploy ${{ secrets.GCP_APP_NAME }} --image $IMAGE_NAME --region us-central1 --platform managed --allow-unauthenticated --cpu 1 --min-instances 1 --max-instances 5 --memory 256Mi --use-http2 --set-secrets FIREBASE_SDK_PRIVATE_KEY=ageofserverless-firebase-sdk-private-key:latest --set-secrets FIREBASE_SDK_CLIENT_EMAIL=ageofserverless-firebase-sdk-client-email:latest
