@@ -12,6 +12,16 @@ FROM node:16-alpine AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
+
+ARG FIREBASE_PROJECT_ID
+ARG FIREBASE_API_KEY
+ARG FIREBASE_AUTH_DOMAIN
+ARG FIREBASE_DATABASE_URL
+ARG FIREBASE_STORAGE_BUCKET
+ARG FIREBASE_MESSAGING_SENDER_ID
+ARG FIREBASE_APP_ID
+ARG FIREBASE_MEASUREMENT_ID
+
 RUN yarn build
 
 # Production image, copy all the files and run next
