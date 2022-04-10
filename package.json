@@ -18,16 +18,14 @@
     "dev": "next dev",
     "start": "next start",
     "test": "jest --config jest.config.js",
-    "lint": "eslint '**/*.{ts,tsx,js}'",
+    "lint": "eslint .",
     "lint:fix": "yarn lint --fix",
-    "format": "prettier --check '**/*.{ts,tsx,js,json}'",
-    "format:fix": "prettier --write '**/*.{ts,tsx,js,json}'",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write .",
     "prebuild": "yarn test",
     "build": "next build",
     "postbuild": "next-sitemap",
-    "prepare": "husky install",
-    "docker:build": "docker build -t fahadlabs/ageofserverless:latest .",
-    "docker:run": "docker run -e 8080:8080 fahadlabs/ageofserverless:latest"
+    "prepare": "husky install"
   },
   "dependencies": {
     "@headlessui/react": "^1.5.0",
