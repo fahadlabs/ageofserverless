@@ -22,7 +22,7 @@ Follow the steps to make a PR.
 - Make your changes
 - Push your commits
 - Make a PR on the `dev` branch.
-- Mention the issue you have worked on.
+- Mention/link the issue you have worked on.
 
 #### Install
 
