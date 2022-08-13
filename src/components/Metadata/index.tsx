@@ -59,7 +59,7 @@ function Metadata({ title, path = '/', description = DESCRIPTION, keywords = [],
       <meta name='twitter:image:alt' content='twitter image' />
       <meta name='twitter:card' content='summary_large_image' />
       <meta name='twitter:url' content={url} />
-      <meta name='twitter:creator' content='@fhdaax' />
+      <meta name='twitter:creator' content='@fahadlabs' />
       {/* apple splash screen images (optional) */}
       {/* <link rel='apple-touch-startup-image' href='/icons/apple_splash_2048.png' sizes='2048x2732' />
       <link rel='apple-touch-startup-image' href='/icons/apple_splash_1668.png' sizes='1668x2224' />

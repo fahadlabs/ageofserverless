@@ -6,9 +6,9 @@
   "homepage": "https://ageofserverless.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/fhdaax/xtoolkit"
+    "url": "https://github.com/fahadlabs/xtoolkit"
   },
-  "issues": "https://github.com/fhdaax/xtoolkit/issues",
+  "issues": "https://github.com/fahadlabs/xtoolkit/issues",
   "scripts": {
     "dev": "next dev",
     "start": "next start",
