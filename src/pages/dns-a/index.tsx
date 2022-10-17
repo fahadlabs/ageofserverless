@@ -5,7 +5,7 @@ import tools from 'src/config/tools';
 import { useRef } from 'react';
 
 const title = 'DNS A Records';
-const description = 'A Records are the simplest type of DNS records, and one of the primary records used in DNS servers.';
+const description = 'A DNS record is a database record used to map a URL to an IP address.';
 
 function DnsA() {
   const metadata = useRef<ITool>(tools.find((tool) => tool.path === 'dns-a'));
